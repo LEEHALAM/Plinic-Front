@@ -1,10 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import { Home, CE, TY, HL } from './pages';
 
 function App() {
   return (
     <Wrapper>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio magnam distinctio omnis fugiat velit blanditiis
-      magni praesentium sed esse, nemo accusamus eligendi modi minus saepe inventore dolores voluptatem sint sequi.
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/CE" element={<CE />} />
+          <Route path="/TY" element={<TY />} />
+          <Route path="/HL" element={<HL />} />
+        </Routes>
+      </BrowserRouter>
     </Wrapper>
   );
 }
