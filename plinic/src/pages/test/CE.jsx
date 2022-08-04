@@ -1,7 +1,8 @@
 import React from 'react';
+import Genre from '../../components/button/Genre';
 
 function CE() {
-  return <div>CE</div>;
+  return <Genre />;
 }
 
 export default CE;
