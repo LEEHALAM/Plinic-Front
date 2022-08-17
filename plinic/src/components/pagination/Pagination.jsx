@@ -20,14 +20,14 @@ function Pagination({ activePage, totalItemsCount, handlePageChange }) {
 
 export default Pagination;
 
-const Theme = {
-  navy: ({ theme }) => theme.color.navy,
-  white: ({ theme }) => theme.color.white,
-  gray: ({ theme }) => theme.color.gray,
-  font: [({ theme }) => theme.font.size['14'], ({ theme }) => theme.font.weight['normal']],
-  boldfont: ({ theme }) => theme.font.weight['bold'],
-  center: ({ theme }) => theme.align.flexCenter,
-  centerCol: ({ theme }) => theme.align.flexCenterColumn,
+const theme = {
+  NAVY: ({ theme }) => theme.color.navy,
+  WHITE: ({ theme }) => theme.color.white,
+  GRAY: ({ theme }) => theme.color.gray,
+  FONT: [({ theme }) => theme.font.size['14'], ({ theme }) => theme.font.weight['normal']],
+  BOLD: ({ theme }) => theme.font.weight['bold'],
+  CENTER: ({ theme }) => theme.align.flexCenter,
+  CENTER_COLUMN: ({ theme }) => theme.align.flexCenterColumn,
 };
 
 const PaginationBox = styled.div`
