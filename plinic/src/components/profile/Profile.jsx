@@ -9,7 +9,7 @@ function Profile({ width, img }) {
 
   return (
     <Wrapper width={width} img={img}>
-      {img === undefined ? <ProfileImg icon={faCircleUser} width={width} /> : ''}
+      {img === undefined && <ProfileImg icon={faCircleUser} width={width} />}
     </Wrapper>
   );
 }
