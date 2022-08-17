@@ -31,27 +31,27 @@ const theme = {
 };
 
 const PaginationBox = styled.div`
-  ${Theme.centerCol}
+  ${theme.CENTER_COLUMN}
 
   ul {
     list-style: none;
     user-select: none;
     padding: 0;
-    ${Theme.center}
+    ${theme.CENTER}
     gap: 5px;
 
     li {
       display: inline-block;
       width: 25px;
       height: 25px;
-      ${Theme.center}
+      ${theme.CENTER}
       border-radius: 50%;
       cursor: pointer;
       transition: ease 0.3s;
 
       a {
-        color: ${Theme.navy};
-        ${Theme.font};
+        color: ${theme.NAVY};
+        ${theme.FONT};
         text-decoration: none;
       }
 
@@ -61,14 +61,14 @@ const PaginationBox = styled.div`
       }
 
       :hover:not(.disabled, .active) > a {
-        ${Theme.boldfont};
+        ${theme.BOLD};
       }
 
       + .active {
-        background: ${Theme.navy};
+        background: ${theme.NAVY};
 
         a {
-          color: ${Theme.white};
+          color: ${theme.WHITE};
         }
       }
 
@@ -76,7 +76,7 @@ const PaginationBox = styled.div`
         cursor: default;
 
         a {
-          color: ${Theme.gray};
+          color: ${theme.GRAY};
           cursor: default;
         }
       }
