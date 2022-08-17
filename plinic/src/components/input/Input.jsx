@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 function Input({ usedFor }) {
   const [userInput, setUserInput] = useState('');
   const [userSubmit, setUserSubmit] = useState('');
 
-  const placeholder = () => {
-    switch (usedFor) {
-      case 'nickname':
-        return '닉네임';
-      case 'search':
-        return '검색어';
-      case 'title':
-        return '제목';
-      default:
-        return '내용';
-    }
+  const placeholder = {
+    nickname: '닉네임',
+    search: '검색어',
+    title: '제목',
+    content: '내용',
   };
 
   const handleInput = e => {
@@ -40,7 +34,7 @@ function Input({ usedFor }) {
         <InputStyled
           usedFor={usedFor}
           value={userInput}
-          placeholder={`${placeholder()}을 입력하세요.`}
+          placeholder={`${placeholder[usedFor]}을 입력하세요.`}
           onChange={handleInput}
           onKeyDown={handleKeyDown}
         />
@@ -80,7 +74,8 @@ const FormStyled = styled.form`
   }
 `;
 
-const NickName = css`
+const inputStyles = {
+  nickname: `
   padding: 7px;
   max-width: 173px;
   border: 0;
@@ -90,28 +85,29 @@ const NickName = css`
       transform: scaleX(1);
     }
   }
-`;
-
-const Search = css`
+  `,
+  search: `
   padding: 12px 20px;
   min-width: 632px;
   min-height: 50px;
-  border: 2px solid ${NAVY};
+  border: 2px solid;
   border-radius: 25px;
-`;
-
-const Title = css`
+  `,
+  title: `
   padding: 10px 12px;
   width: 520px;
-  border: 1px solid ${NAVY};
+  border: 1px solid;
   border-radius: 10px;
-`;
-
-const Content = css`
-  ${Title}
+  `,
+  content: `
+  padding: 10px 12px;
+  width: 520px;
+  border: 1px solid;
+  border-radius: 10px;
   height: 150px;
   resize: none;
-`;
+  `,
+};
 
 const InputStyled = styled.input.attrs(props => ({
   type: 'text',
@@ -119,22 +115,10 @@ const InputStyled = styled.input.attrs(props => ({
   required: true,
 }))`
   ${({ theme }) => theme.font.size['16']}
+  ${props => inputStyles[props.usedFor]}
+  border-color: ${NAVY};
   caret-color: ${NAVY};
   &:focus {
     outline: none;
   }
-  ${props => {
-    switch (props.usedFor) {
-      case 'nickname':
-        return NickName;
-      case 'search':
-        return Search;
-      case 'title':
-        return Title;
-      case 'content':
-        return Content;
-      default:
-        return;
-    }
-  }}
 `;
