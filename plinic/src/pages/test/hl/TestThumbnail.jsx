@@ -12,6 +12,9 @@ function TestThumbnail() {
       {data.map(el => (
         <Thumbnail key={el.id} img={el.thumbnail} post likes={el.like} likeState={el.likeState} />
       ))}
+      {data.map(el => (
+        <Thumbnail key={el.id} img={el.thumbnail} size={140} post likes={el.like} likeState={el.likeState} />
+      ))}
     </>
   );
 }
