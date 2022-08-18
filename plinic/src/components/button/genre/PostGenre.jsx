@@ -56,6 +56,7 @@ const Wrapper = styled.div`
 `;
 
 const PostGenreBtn = styled.button`
+  padding: 0px 10px;
   width: fit-content;
   height: 20px;
   background-color: ${WHITE};
