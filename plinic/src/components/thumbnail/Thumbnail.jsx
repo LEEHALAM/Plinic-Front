@@ -11,7 +11,7 @@ function Thumbnail({ size, img, post, likes, likeState }) {
   };
 
   return (
-    <Wrapper img={img} onClick={clickedThumbnail}>
+    <Wrapper img={img} onClick={clickedThumbnail} size={size}>
       {post && (
         <LikesWrapper>
           <Icon likes={likes} icon={likeState ? Like : noLike} />
