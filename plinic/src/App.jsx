@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import { Home, CE, TY, HL, TestProfile, TestThumbnail } from './pages';
+import { Home, CE, TY, HL, TestProfile, TestThumbnail, TestScroll } from './pages';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route path="/HL" element={<HL />} />
           <Route path="/HL/profile" element={<TestProfile />} />
           <Route path="/HL/thumbnail" element={<TestThumbnail />} />
+          <Route path="/HL/scroll" element={<TestScroll />} />
         </Routes>
       </BrowserRouter>
     </Wrapper>
