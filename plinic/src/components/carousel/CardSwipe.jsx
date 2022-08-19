@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function CardSlide() {
+function CardSwipe() {
   const items = ['#33a', '#8c9', '#f3e074', '#44a', '#8a0', '#e3f093', '#33a', '#8c9', '#f3e074', '#44a'];
   const itemSize = items.length;
   const addedItems = 10;
@@ -16,6 +16,7 @@ function CardSlide() {
     let addedFront = [];
     let addedLast = [];
     var index = 0;
+
     while (index < addedItems) {
       addedLast.push(items[index % items.length]);
       addedFront.unshift(items[items.length - 1 - (index % items.length)]);
@@ -91,7 +92,7 @@ function CardSlide() {
   );
 }
 
-export default CardSlide;
+export default CardSwipe;
 
 const NAVY = ({ theme }) => theme.color.navy;
 const CENTER_COLUMN = ({ theme }) => theme.align.flexCenterColumn;
