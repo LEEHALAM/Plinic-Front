@@ -25,5 +25,6 @@ const Wrapper = styled.div`
   @media (min-width: 1100px) {
     width: 100vw;
     padding: 0 calc((100vw - 1024px) / 2);
+    overflow-x: hidden;
   }
 `;

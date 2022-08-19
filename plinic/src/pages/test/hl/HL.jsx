@@ -6,12 +6,13 @@ import Input from '../../../components/input/Input';
 function HL() {
   return (
     <Wrapper>
-      {/* <Input usedFor={'nickname'} /> */}
-      {/* <Input usedFor={'search'} />
+      {/* <Input usedFor={'nickname'} />
+      <Input usedFor={'search'} />
       <Input usedFor={'title'} />
       <Input usedFor={'content'} /> */}
       <Link to="/hl/profile">Profile Component</Link>
       <Link to="/hl/thumbnail">thumbnail Component</Link>
+      <Link to="/hl/scroll">scroll Component</Link>
     </Wrapper>
   );
 }

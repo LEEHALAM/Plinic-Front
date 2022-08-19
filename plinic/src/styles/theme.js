@@ -41,10 +41,41 @@ const align = {
   `,
 };
 
+const scroll = {
+  myPage: `
+  overflow: auto;
+  white-space: nowrap;
+  ::-webkit-scrollbar{
+    width: 13px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #22577A;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #D9D9D9;
+  }
+  `,
+  post: `
+  overflow: auto;
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #8C8C8C;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #D9D9D9;
+    border-radius: 4px;
+  }
+  `,
+};
+
 const theme = {
   color,
   font,
   align,
+  scroll,
 };
 
 export default theme;
