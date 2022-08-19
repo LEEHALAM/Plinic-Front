@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown as Down } from '@fortawesome/free-solid-svg-icons';
 
 function SelectBox({ sortBy }) {
   const [currentSortType, setCurrentSortType] = useState('정확도순');
@@ -20,9 +22,13 @@ function SelectBox({ sortBy }) {
   };
 
   console.log(currentSortType);
+
   return (
     <Container>
-      <SortLabel onClick={() => setToggleMenu(current => !current)}>{currentSortType} ▼</SortLabel>
+      <SortLabel onClick={() => setToggleMenu(current => !current)}>
+        <div>{currentSortType}</div>
+        <FontAwesomeIcon icon={Down} />
+      </SortLabel>
       <Select show={toggleMenu}>
         <OptionBox>
           {sortOptions.map(option => (
@@ -38,47 +44,60 @@ function SelectBox({ sortBy }) {
 
 export default SelectBox;
 
+const NAVY = ({ theme }) => theme.color.navy;
+const WHITE = ({ theme }) => theme.color.white;
+const GRAY = ({ theme }) => theme.color.gray;
+
 const Container = styled.div`
-  position: relative;
-  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const SortLabel = styled.div`
   padding: 8px;
-  width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  color: ${NAVY};
   user-select: none;
   cursor: pointer;
 `;
 
 const Select = styled.ul`
+  position: relative;
   padding: 0;
   margin: 0;
   border: 0;
   list-style: none;
-  opacity: ${props => (props.show ? '1' : '0')};
-  transition: ease opacity 0.2s;
+  transform: scale(${props => (props.show ? '1' : '0')});
+  transform-origin: top right;
+  transition: ease transform 0.2s;
 `;
 
 const OptionBox = styled.div`
-  background: #fff;
   position: absolute;
-  top: 40px;
+  top: 0;
   right: 0;
-  padding: 10px;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  padding: 5px 0;
+  background: ${WHITE};
+  box-shadow: 0 0 10px 3px ${GRAY};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: fit-content;
-  z-index: 2;
+  z-index: 10;
 `;
 
 const Option = styled.li`
-  width: fit-content;
-  padding: 0;
+  padding: 5px 10px;
   margin: 0;
+  color: ${NAVY};
   user-select: none;
   cursor: pointer;
+
+  &:hover {
+    background: ${NAVY};
+    color: ${WHITE};
+  }
 `;
