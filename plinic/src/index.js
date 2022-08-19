@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import Layout from './styles/layout';
 import theme from './styles/theme';
-import Modal from './components/Modal';
+// import Modal from './components/Modal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
