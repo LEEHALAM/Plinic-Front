@@ -10,6 +10,7 @@ import {
   TestProfile,
   TestThumbnail,
   TestScroll,
+  TestSwitch,
 } from './test';
 
 export {
@@ -24,4 +25,5 @@ export {
   TestProfile,
   TestThumbnail,
   TestScroll,
+  TestSwitch,
 };
