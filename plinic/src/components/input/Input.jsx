@@ -19,7 +19,6 @@ function Input({ usedFor }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setUserSubmit(e.target.value);
   };
 
   const handleKeyDown = e => {
