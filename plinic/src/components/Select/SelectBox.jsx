@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown as Down } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,6 +22,7 @@ function SelectBox({ sortBy }) {
   };
 
   console.log(currentSortType);
+  console.log(toggleMenu);
 
   return (
     <Container>
@@ -29,15 +30,17 @@ function SelectBox({ sortBy }) {
         <div>{currentSortType}</div>
         <FontAwesomeIcon icon={Down} />
       </SortLabel>
-      <Select show={toggleMenu}>
-        <OptionBox>
-          {sortOptions.map(option => (
-            <Option key={option.value} onClick={handleChange}>
-              {option.name}
-            </Option>
-          ))}
-        </OptionBox>
-      </Select>
+      <SelectWrapper>
+        <Select isShow={toggleMenu}>
+          <OptionBox>
+            {sortOptions.map(option => (
+              <Option key={option.value} onClick={handleChange}>
+                {option.name}
+              </Option>
+            ))}
+          </OptionBox>
+        </Select>
+      </SelectWrapper>
     </Container>
   );
 }
@@ -48,10 +51,23 @@ const NAVY = ({ theme }) => theme.color.navy;
 const WHITE = ({ theme }) => theme.color.white;
 const GRAY = ({ theme }) => theme.color.gray;
 
+const slideUpDown = isShow => keyframes`
+  from {
+    -webkit-transform: translateY(${isShow ? 0 : -130}px);
+            transform: translateY(${isShow ? 0 : -130}px);
+  }
+  to {
+    -webkit-transform: translateY(${isShow ? -130 : 0}px);
+            transform: translateY(${isShow ? -130 : 0}px);
+  }
+`;
+
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: flex-start;
 `;
 
 const SortLabel = styled.div`
@@ -64,21 +80,23 @@ const SortLabel = styled.div`
   cursor: pointer;
 `;
 
+const SelectWrapper = styled.div`
+  position: absolute;
+  padding: 10px;
+  top: 30px;
+  overflow: hidden;
+`;
+
 const Select = styled.ul`
   position: relative;
   padding: 0;
   margin: 0;
   border: 0;
   list-style: none;
-  transform: scale(${props => (props.show ? '1' : '0')});
-  transform-origin: top right;
-  transition: ease transform 0.2s;
+  animation: ${props => slideUpDown(props.isShow)} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 `;
 
 const OptionBox = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
   padding: 5px 0;
   background: ${WHITE};
   box-shadow: 0 0 10px 3px ${GRAY};
