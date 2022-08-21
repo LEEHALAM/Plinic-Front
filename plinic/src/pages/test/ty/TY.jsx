@@ -8,6 +8,7 @@ function TY() {
       <Link to="/ty/pagination">Pagination Component</Link>
       <Link to="/ty/input">Input Component</Link>
       <Link to="/ty/select">SelectBox Component</Link>
+      <Link to="/ty/card-swipe">CardSwipe Component</Link>
     </Wrapper>
   );
 }
