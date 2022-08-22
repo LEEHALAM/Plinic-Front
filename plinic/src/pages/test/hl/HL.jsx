@@ -9,6 +9,7 @@ function HL() {
       <Link to="/hl/thumbnail">thumbnail Component</Link>
       <Link to="/hl/scroll">scroll Component</Link>
       <Link to="/hl/switch">switch Component</Link>
+      <Link to="/hl/modal">modal Component</Link>
     </Wrapper>
   );
 }
