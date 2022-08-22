@@ -15,6 +15,7 @@ import {
   TestSwitch,
   TestModal,
   TestCard,
+  TestPost,
 } from './pages';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/HL/switch" element={<TestSwitch />} />
           <Route path="/HL/modal" element={<TestModal />} />
           <Route path="/HL/card" element={<TestCard />} />
+          <Route path="/HL/post" element={<TestPost />} />
         </Routes>
       </BrowserRouter>
     </Wrapper>
