@@ -10,6 +10,7 @@ function HL() {
       <Link to="/hl/scroll">scroll Component</Link>
       <Link to="/hl/switch">switch Component</Link>
       <Link to="/hl/modal">modal Component</Link>
+      <Link to="/hl/card">card Component</Link>
     </Wrapper>
   );
 }

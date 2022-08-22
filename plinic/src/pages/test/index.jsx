@@ -10,6 +10,7 @@ import TestThumbnail from './hl/TestThumbnail';
 import TestScroll from './hl/TestScroll';
 import TestSwitch from './hl/TestSwitch';
 import TestModal from './hl/TestModal';
+import TestCard from './hl/TestCard';
 
 export {
   CE,
@@ -24,4 +25,5 @@ export {
   TestScroll,
   TestSwitch,
   TestModal,
+  TestCard,
 };
