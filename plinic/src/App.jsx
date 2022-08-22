@@ -13,6 +13,7 @@ import {
   TestThumbnail,
   TestScroll,
   TestSwitch,
+  TestModal,
 } from './pages';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/HL/thumbnail" element={<TestThumbnail />} />
           <Route path="/HL/scroll" element={<TestScroll />} />
           <Route path="/HL/switch" element={<TestSwitch />} />
+          <Route path="/HL/modal" element={<TestModal />} />
         </Routes>
       </BrowserRouter>
     </Wrapper>
