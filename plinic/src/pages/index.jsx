@@ -12,6 +12,8 @@ import {
   TestScroll,
   TestSwitch,
   TestModal,
+  TestCard,
+  TestPost,
 } from './test';
 
 export {
@@ -28,4 +30,6 @@ export {
   TestScroll,
   TestSwitch,
   TestModal,
+  TestCard,
+  TestPost,
 };
